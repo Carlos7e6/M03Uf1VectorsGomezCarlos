@@ -6,7 +6,7 @@ public class Vectors
     public static void Main()
     {
         var menu = new Vectors();
-        menu.SearchInOrdered();
+        menu.InverseOrder();
     }
     /*public void Menu()
     {
@@ -424,7 +424,22 @@ public void SearchInOrderedVersionCarlos()
 
 
 }
-public void InverseOrder() { }
+    /*L'usuari entra 10 enters. Imprimeix-los en l'ordre invers al que els ha entrat.*/
+    /**/
+public void InverseOrder()
+{
+        int[] valors = new int[10];//declaro una array que tiene 10 valores
+        
+        for(int i = 0; i < 10; i++)
+        {
+            valors[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        for(int i = 9; i >= 0; i--)
+        {
+            Console.WriteLine(valors[i] + " ");
+        }
+}
 public void Palindrome() { }
 public void ListSortedValues() { }
 public void CapICuaValues() { }
