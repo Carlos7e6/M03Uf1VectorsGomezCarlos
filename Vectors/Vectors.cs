@@ -1,12 +1,9 @@
-﻿using System.Runtime.ConstrainedExecution;
-using System.Security.Cryptography.X509Certificates;
-
-public class Vectors
+﻿public class Vectors
 {
     public static void Main()
     {
         var menu = new Vectors();
-        menu.ListSortedValues();
+        menu.Isbn();
     }
     /*public void Menu()
     {
@@ -486,17 +483,233 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
             }
 
         } 
+      
         Console.WriteLine(ordre);
     }
-  /* public void CapICuaValues() { }
-   public void ListSameValues() { }
-   public void ListSumValues() { }
-   public void IvaPrices() { }
-   public void CovidGrowRate() { }
-   public void BicicleDistance() { }
-   public void ValueNearAvg() { }
-   public void Isbn() { }
-   public void Isbn13() { }
+
+    /*Printa per pantalla cap i cua si la llista de N valors introduïts per l'usuari són cap i cua (llegits en ordre invers és la mateixa llista).*/
+    public void CapICuaValues() 
+{
+        int num = Convert.ToInt32(Console.ReadLine());
+        int[]vector= new int[num];
+        int[]vectorInv= new int[num];
+        bool capicua= true;
+
+        for (int i = 0; i < num; i++)
+        {
+            int j = vectorInv.Length - i -1;
+
+            Console.WriteLine("Donam el nombre " + i);
+
+            vector[i]= Convert.ToInt32(Console.ReadLine());
+
+            vectorInv[j] = vector[i];
+
+        }
+
+        for (int i = 0; i < num; i++)
+        {
+            if (vector[i] != vectorInv[i]) 
+            {
+                i = num;
+                capicua = false;
+            }
+        }
+
+        if(capicua)
+        {
+            Console.WriteLine("Es capicua");
+        }
+        else
+        {
+            Console.WriteLine("No es capicua");
+        }
+
+        
+}
+
+    /*L'usuari introduirà 2 vectors de valors, primer mida després introdueix elements.
+    Printa per pantalla són iguals si ha introduït el mateix vector, o no són iguals si són diferents.*/
+public void ListSameValues()
+{
+       Console.WriteLine("Donam el numero d'elements que te el vector 1");
+       int num1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Donam el numero d'elements que te el vector 2");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+       int[]vector1 = new int[num1]; 
+       int[]vector2 = new int[num2];
+
+        bool iguals = true;
+        
+        if(num1 != num2)
+        {
+            Console.WriteLine("No són iguals");
+        }
+        else
+        {
+            for(int i=0; i<vector1.Length; i++)
+            {
+                Console.WriteLine("Donam el de nombre de la posicio " + i + " del vector1");
+                vector1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < vector2.Length; i++)
+            {
+                Console.WriteLine("Donam el de nombre de la posicio " + i + " del vector2");
+                vector2[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for(int i = 0; i < vector1.Length; i++)
+            {
+                if (vector1[i] != vector2[i]) iguals = false;
+            }
+
+            if (iguals == true)
+            {
+                Console.WriteLine("Son iguals");
+            }
+            else
+            {
+                Console.WriteLine("No són iguals");
+            }
+        }        
+}
+
+    /*L'usuari introdueix una llista de valors.
+    Imprimeix per pantalla la suma d'aquests valors.
+    */
+public void ListSumValues() 
+{
+        Console.WriteLine("Donam el numero de valors que te l'array");
+        int num = Convert.ToInt32(Console.ReadLine());
+        int[] vector = new int[num];
+
+
+        for (int i = 0; i < vector.Length; i++)
+        {
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine(vector.Sum());
+
+}
+
+    /*En una botiga volem convertir tot de preus sense a IVA al preu amb IVA. Per afegir l'IVA a un preu hem de sumar-hi el 21% del seu valor.
+    L'usuari introduirà el preu de 10 articles. Imprimeix per pantalla el preu amb l'IVA afegit amb el següent format indicat a continuació. El programa no pot imprimir res fins a que hagi llegit tots els valors.
+    */
+public void IvaPrices() 
+{ 
+        double[] articles = new double[10];
+        
+        for(int i=0; i<articles.Length; i++)
+        {
+
+            articles[i]= Convert.ToDouble(Console.ReadLine()); 
+        }
+
+        foreach (double item in articles)
+        {
+            Console.WriteLine(item +" IVA = " + (item + item * 0.21) + " euros");
+        }
+}
+
+    /*El departament de salut ens ha demanat que calculem la taxa d’infecció que està tenint la Covid en la nostre regió sanitària. Donat un nombre de casos 
+    casos1
+    casos1 en una setmana, si la següent tenim un nombre de casos 
+    casos2
+    casos2, podem calcular la taxa d'infecció amb la fórmula
+    infecció =  casos2/casos1
+    L'usuari introduirà un llistat de casos detectats cada setmana. Imprimeix la taxa d'infecció detectada cada setmana. El programa no pot imprimir res fins a que hagi llegit tots els valors.
+    */
+    public void CovidGrowRate()
+    {
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        double[] casos= new double[num];
+
+        for(int i=0; i<casos.Length;i++)
+        {
+            casos[i]= Convert.ToDouble(Console.ReadLine());
+        }
+        
+        for(int i=0; i < casos.Length -1;i++)
+        {
+            Console.WriteLine("Caso " + (i + 1) + ": " + casos[i +1] / casos[i]);
+        }
+
+    }
+
+    /*Donada una velocitat d'una bicicleta en metres per segon, indica els metres que haurà recorregut quan hagi passat 1,2,3,4,5,6,7,8,9 i 10 segons.*/
+      public void BicicleDistance() 
+      {
+        double velocitat = Convert.ToDouble(Console.ReadLine());
+        double[]distancia = new double[10];
+
+        for( int i = 1; i < distancia.Length;i++)
+        {
+            distancia[i] = i;
+        }
+
+        foreach (double item in distancia)
+        {
+            Console.WriteLine(item * velocitat);
+        }
+      }
+    /*L'usuari introdueix una llista de valors. Imprimeix per pantalla el valor que està més proper a la mitjana dels valors de la llista (calcula la mitjana dels valors primer i cerca el més proper després).*/
+    public void ValueNearAvg() 
+    { 
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        int numAprox = 0;
+        int mitjana;
+        int machaca;
+        int valorAprox;
+       
+        int[] vector = new int[num];
+
+        for(int i =0; i < vector.Length; i++) 
+        {
+            vector[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        ;
+        valorAprox = vector.Sum();
+        mitjana = vector.Sum() / num;
+
+        for(int i =0; i < vector.Length; i++) 
+        { 
+            if(mitjana < vector[i])
+            {
+                machaca = vector[i] - mitjana;
+                if(valorAprox >machaca)
+                {
+                    valorAprox = machaca;
+                    numAprox = vector[i];
+                }
+            }
+            else if(mitjana > vector[i])
+            {
+                machaca = mitjana - vector[i];
+                if (valorAprox > machaca)
+                {
+                    valorAprox = machaca;
+                    numAprox = vector[i];
+                }
+            }
+        }
+        Console.WriteLine(numAprox);
+
+    }
+
+    /*Es vol fer un programa per verificar que un codi ISBN (International Standard Book Code) és correcte. El format d’un codi ISBN és: Codi de grup (1 dígit), Codi de l’editor (4 dígits), Codi del llibre (4 dígits), Caràcter/dígit de control (1 caràcter/dígit)
+    Així, per exemple, el codi ISBN d’un llibre és 84-7602-561-0. La verificació del codi es fa a partir d’aplicar una sèrie d’operacions sobre els primers 9 dígits del resultat de les quals s'extreu el dígit/caràcter de control. Per obtenir el del control, cal fer els passos següents:
+    Es multiplica cadascun dels dígits per la posició que ocupa dins l’ISBN i se sumen totes les multiplicacions. Es divideix el resultat per 11 i el residu és el dígit de control. Si aquest residu és 10 es fa anar la lletra “X” com a control.
+    Per exemple el ISBN: 84-7602-561-0 , el caràcter de control és el 0
+    (8x1)+(4x2)+(7x3)+(6x4)+(0x5)+(2x6)+(5x7)+(6x8)+(1x9) = 165 165 mod 11 = 0
+    El residu és igual al caràcter de control per tant és un ISBN vàlid
+    */
+
+    public void Isbn() { }
+   /*public void Isbn13() { }
 */
 
 }
