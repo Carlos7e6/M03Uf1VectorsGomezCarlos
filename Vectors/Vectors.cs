@@ -3,125 +3,137 @@
     public static void Main()
     {
         var menu = new Vectors();
-        menu.Isbn();
+        menu.Menu();
     }
-    /*public void Menu()
+    public void Menu()
     {
-        Console.WriteLine("Escull una opció");
-        Console.WriteLine("");
-        Console.WriteLine("0 - Exit");
-        Console.WriteLine("1 - DayOfWeek");
-        Console.WriteLine("2 - PlayerNumbers");
-        Console.WriteLine("3 - CandidatesList");
-        Console.WriteLine("4 - LetterInWord");
-        Console.WriteLine("5 - AddValuesToList");
-        Console.WriteLine("6 - PushButtonPadlockSimulator");
-        Console.WriteLine("7 - BoxesOpenedCounter");
-        Console.WriteLine("8 - MinOf10Values");
-        Console.WriteLine("9 - IsThereAMultiple0f7");
-        Console.WriteLine("A - SearchInOrdered");
-        Console.WriteLine("B - InverseOrder");
-        Console.WriteLine("C - Palindrome");
-        Console.WriteLine("D - ListSortedValues");
-        Console.WriteLine("E - CapICuaValues");
-        Console.WriteLine("F - ListSameValues");
-        Console.WriteLine("G - ListSumValues");
-        Console.WriteLine("H - IvaPrices");
-        Console.WriteLine("I - CovidGrowRate");
-        Console.WriteLine("J - BicicleDistance");
-        Console.WriteLine("K - ValueNearAvg");
-        Console.WriteLine("L - Isbn");
-        Console.WriteLine("M - Isbn13");
 
-        string x;
+       
+        char x;
         do
         {
-            x = Convert.ToString(Console.ReadLine());
+            Console.Clear(); ;
+            Console.WriteLine();
+            Console.WriteLine("Escull una opció");
+            Console.WriteLine("");
+            Console.WriteLine("0 - Exit");
+            Console.WriteLine("1 - DayOfWeek");
+            Console.WriteLine("2 - PlayerNumbers");
+            Console.WriteLine("3 - CandidatesList");
+            Console.WriteLine("4 - LetterInWord");
+            Console.WriteLine("5 - AddValuesToList");
+            Console.WriteLine("6 - Swap");
+            Console.WriteLine("7 - PushButtonPadlockSimulator");
+            Console.WriteLine("8 - BoxesOpenedCounter");
+            Console.WriteLine("9 - MinOf10Values");
+            Console.WriteLine("A - IsThereAMultiple0f7");
+            Console.WriteLine("B - SearchInOrdered");
+            Console.WriteLine("C - InverseOrder");
+            Console.WriteLine("D - Palindrome");
+            Console.WriteLine("E - ListSortedValues");
+            Console.WriteLine("F - CapICuaValues");
+            Console.WriteLine("G - ListSameValues");
+            Console.WriteLine("H - ListSumValues");
+            Console.WriteLine("I - IvaPrices");
+            Console.WriteLine("J - CovidGrowRate");
+            Console.WriteLine("K - BicicleDistance");
+            Console.WriteLine("L - ValueNearAvg");
+            Console.WriteLine("M - Isbn");
+            Console.WriteLine("N - Isbn13");
+
+            Console.WriteLine();
+            Console.WriteLine("Escogeix una opció: ");
+            x = Convert.ToChar(Console.ReadLine());
 
             switch (x)
             {
-                case "0":
+                case '0':
                     Console.WriteLine("Bye");
                     break;
-                case "1":
+                case '1':
                     DayOfWeek();
                     break;
-                case "2":
+                case '2':
                     PlayerNumbers();
                     break;
-                case "3":
+                case '3':
                     CandidatesList();
                     break;
-                case "4":
+                case '4':
                     LetterInWord();
                     break;
-                case "5":
+                case '5':
                     AddValuesToList();
                     break;
-                case "6":
+                case '6':
                     Swap();
                     break;
-                case "7":
+                case '7':
                     PushButtonPadlockSimulator();
                     break;
-                case "8":
+                case '8':
                     BoxesOpenedCounter();
                     break;
-                case "9":
+                case '9':
                     MinOf10Values();
                     break;
-                case "A":
+                case 'A':
                     IsThereAMultipleOf7();
                     break;
-                case "B":
+                case 'B':
                     SearchInOrdered();
                     break;
-                case "C":
+                case 'C':
                     InverseOrder();
                     break;
-                case "D":
+                case 'D':
                     Palindrome();
                     break;
-                case "E":
+                case 'E':
                     ListSortedValues();
                     break;
-                case "F":
+                case 'F':
                     CapICuaValues();
                     break;
-                case "G":
+                case 'G':
                     ListSameValues();
                     break;
-                case "H":
+                case 'H':
+                    ListSumValues();
+                    break;
+                case 'I':
                     IvaPrices();
                     break;
-                case "I":
+                case 'J':
                     CovidGrowRate();
                     break;
-                case "J":
+                case 'K':
                     BicicleDistance();
                     break;
-                case "K":
+                case 'L':
                     ValueNearAvg();
                     break;
-                case "L":
+                case 'M':
                     Isbn();
                     break;
-                case "M":
+                case 'N':
+                    Console.Clear();
                     Isbn13();
                     break;
                 default: Console.WriteLine("Prem un valor valid");
                     break;
             }
             
-        } while (x != "0");
+        } while (x != '0');
     }
-    */
+    
     //DESCRIPTION:Donat un enter, printa el dia de la setmana amb text (dilluns, dimarts, dimecres…), tenint en compte que dilluns és el 0. Els dies de la setmana es guarden en un vector.
     public void DayOfWeek()
     {
 
         Console.Clear();
-        Console.WriteLine("");
+        Console.WriteLine("1 - DayOfWeek");
+        Console.WriteLine();
 
         int x;
 
@@ -135,7 +147,9 @@
 
         string[] dies = new string[7] { "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge" };//declaro e inicialitzo a la array possant el nombre de valors que vull i aquest mateixos
         Console.WriteLine(dies[x]);//printo per pantalla el valor que coincideix amb el numero de l'array
-
+        
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     //DESCRIPTION:Volem fer un petit programa per guardar l'alineació inicial de jugadors d'un partit de bàsquet. L'usuari introduirà els 5 números dels jugadors. Imprimeix-los després amb el format indicat.
@@ -143,7 +157,9 @@
     public void PlayerNumbers()
     {
 
-        Console.Clear();//Netejo la consola
+        Console.Clear();
+        Console.WriteLine("2 - PlayerNumbers");
+        Console.WriteLine();
 
         int[] players = new int[5];//declaro una array d'int i la incialitzo a 5 
 
@@ -167,6 +183,9 @@
         }
         Console.Write("]");//fina del print
 
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
     }
 
     /*DESCRIPTION:Volem fer un petit programa per un partit polític. Quan hi ha eleccions, el partit presenta una llista de candidats. Cada candidat té una posició a la llista.
@@ -177,13 +196,16 @@
     public void CandidatesList()
     {
 
+        Console.Clear();
+        Console.WriteLine("3 - CandidatesList");
+        Console.WriteLine();
+
+
+        Console.Write("Qyab ");
         int x = Convert.ToInt32(Console.ReadLine());//declaro x i el demano a l'usuari
         string[] candidats = new string[x];//declaro un array de strings i poso que el nombre de valors que conté es x
 
-        for (int i = 0; i < x; i++)//declaro e inicialitzo i a 0; mentres i sigui mes petita que x; suma 1 a i
-        {
-            candidats[i] = Convert.ToString(Console.ReadLine());//li dono a candidats el valor de la i, la igualo al que em dongui l'usuari
-        }
+        for (int i = 0; i < x; i++)/*declaro e inicialitzo i a 0; mentres i sigui mes petita que x; suma 1 a i */candidats[i] = Convert.ToString(Console.ReadLine());//li dono a candidats el valor de la i, la igualo al que em dongui l'usuari
 
         Console.WriteLine();
         Console.WriteLine();
@@ -196,28 +218,43 @@
             x--;//decremento 1 a x
             Console.WriteLine(candidats[x]);//printo el candidat donat per x a la pantalla
         } while (x != -1);//tot aixo mentres x no sigui -1
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*DESCRIPTION:Donada una paraula i una posició  indica quina lletra hi ha a la posició indicada*/
     public void LetterInWord()
     {
+
+        Console.Clear();
+        Console.WriteLine("4 - LetterInWord");
+        Console.WriteLine();
+
         string palabra = Console.ReadLine();//declaro i demano una paraula a l'usuari
 
         int posicio = Convert.ToInt32(Console.ReadLine());//declaro un int i demano la posicio que voldra l'usuari
 
         Console.WriteLine(palabra[posicio - 1]);//printo la posicio que vol l'usuari
 
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*DESCRIPTION: Inicialitza un vector de floats de mida 50, amb el valor 0.0f a tots els elements.
-Després assigna els valors següents a les posicions indicades i printa el vector:
-primera: 31.0f
-segona: 56.0f
-vintena: 12.0f
-última: 79.0f
-*/
+    Després assigna els valors següents a les posicions indicades i printa el vector:
+    primera: 31.0f
+    segona: 56.0f
+    vintena: 12.0f
+    última: 79.0f
+    */
     public void AddValuesToList()
     {
+
+        Console.Clear();
+        Console.WriteLine("5 - AddValuesToList");
+        Console.WriteLine();
+
         float[] nombres = new float[50]; //declaro un array de float amb nom nombre i dic que te 50 valors
 
         nombres[0] = 31.0f;//dic que la posicio 0 es 31.0f
@@ -226,22 +263,25 @@ vintena: 12.0f
         nombres[49] = 79.0f;//dic que la posicio 49 es 79.0f
 
         Console.Write("[");
-        for (int i = 0; i < nombres.Length; i++)//declaro e incialitzo i a 0 que em fara de contador; mentres i sigui mes petit que la amplada de l'array
-        {
-            Console.Write(nombres[i] + ", ");//printo per pantalla els nombres
-        }
+        for (int i = 0; i < nombres.Length; i++)/*declaro e incialitzo i a 0 que em fara de contador; mentres i sigui mes petit que la amplada de l'array*/ Console.Write(nombres[i] + ", ");//printo per pantalla els nombres
         Console.WriteLine("]");
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*DESCRIPTION: Donada un vector de 4 números de tipus int,intercanvia el primer per l'últim element.*/
     public void Swap()
     {
+
+        Console.Clear();
+        Console.WriteLine("6 - Swap");
+        Console.WriteLine();
+
         int[] nums = new int[4];//declaro una array d'int y dic quan valors conté
 
-        for (int i = 0; i < nums.Length; i++)//inicialitzo i a 0; mentres i sigui mes petit que el numero de valor que conte l'array; incremento 1 a i
-        {
-            nums[i] = Convert.ToInt32(Console.ReadLine());//la posicio de nums i es igual al que indiqui l'usuari
-        }
+        for (int i = 0; i < nums.Length; i++)/*inicialitzo i a 0; mentres i sigui mes petit que el numero de valor que conte l'array; incremento 1 a i */nums[i] = Convert.ToInt32(Console.ReadLine());//la posicio de nums i es igual al que indiqui l'usuari
+
 
         Console.WriteLine();//espais
         Console.WriteLine();
@@ -251,7 +291,8 @@ vintena: 12.0f
             Console.Write(nums[i] + ", ");//printo per pantalla num i
         }
 
-
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*DESCRIPTION: Volem fer un simulador d'un candau com el de la foto:
@@ -261,6 +302,11 @@ vintena: 12.0f
     */
     public void PushButtonPadlockSimulator()
     {
+
+        Console.Clear();
+        Console.WriteLine("7 - PushButtonPadlockSimulator");
+        Console.WriteLine();
+
         bool[] press = new bool[8];//declaro una array de bools y dic que conte 8 valors
 
         Console.WriteLine("Quina caixa vols obrir del 1 al 8?");
@@ -273,11 +319,10 @@ vintena: 12.0f
             x = Convert.ToInt32(Console.ReadLine()) - 1;//demano x a l'usuari
         }
 
-        foreach (var print in press)//
-        {
-            Console.Write(print + ", ");//printo el resultat amb un foreach  
-        }
+        foreach (var print in press) Console.Write(print + ", ");//printo el resultat amb un foreach  
 
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*DESCRIPTION: Un banc té tot de caixes de seguretat, enumerades del 0 al 10.
@@ -287,6 +332,11 @@ vintena: 12.0f
     */
     public void BoxesOpenedCounter()
     {
+        Console.Clear();
+        Console.WriteLine("8 - BoxesOpenedCounter");
+        Console.WriteLine();
+
+
         int[] caixes = new int[11];//declaro una array d'int i dic que conte 11 valors
 
         int numCaix = Convert.ToInt32(Console.ReadLine());//declaro un int i la demano a l'usuari
@@ -302,10 +352,17 @@ vintena: 12.0f
         {
             Console.WriteLine(print);//printo cuantes vegades s'han obert les caixes
         }
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
     /*L'usuari entra 10 enters. Crea un vector amb aquest valors. Imprimeix per pantalla el valor més petit introduït.*/
     public void MinOf10Values()
     {
+        Console.Clear();
+        Console.WriteLine("9 - Min0f10Values");
+        Console.WriteLine();
+
         int[] valors = new int[10];//declaro una array d'int i dic que te 10 valors 
         int min = 0;//declaro e incialitzo a 0 un int min
 
@@ -320,12 +377,20 @@ vintena: 12.0f
         }
 
         Console.WriteLine(min);//printo
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*Donat el següent vector, imprimeix true si algun dels números és divisible entre 7 o false en cas contrari.
 values = (4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40, 98, 54, 687, 31, 4894, 468, 46, 84687, 894, 40, 846, 1681, 618, 161, 846, 84687, 6, 848)*/
     public void IsThereAMultipleOf7()
     {
+
+        Console.Clear();
+        Console.WriteLine("A - IsThereMultipleOf7");
+        Console.WriteLine();
+
         int[] valors = { 4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40, 98, 54, 687, 31, 4894, 468, 46, 84687, 894, 40, 846, 1681, 618, 161, 846, 84687, 6, 848 };
         //declaro una array d'int i li dic tots els valors que conte
         bool divisible = false;//declaro un bool i l'igualo a false
@@ -339,12 +404,19 @@ values = (4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40,
         }
 
         Console.WriteLine(divisible);//printo el true
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*Donat una llista d'enters ordenats de menor a major indica si un cert valor existeix en el bucle.*/
 
     public void SearchInOrdered()
     {
+        Console.Clear();
+        Console.WriteLine("B - SearchInOrdered");
+        Console.WriteLine();
+
         Console.WriteLine("Donam el numero de valors que te l'array");//printo una ordre
         int x = Convert.ToInt32(Console.ReadLine());//declaro x i la demano a l'usuari ( es el nombre de valor de l'array)
         int y = 0;//declaro e inicialitzo a 0 y ( es el comparador)
@@ -387,10 +459,15 @@ values = (4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40,
 
         Console.WriteLine(repetit);//printo
 
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
 
     }
     public void SearchInOrderedVersionCarlos()
     {
+
+
         Console.WriteLine("Donam el numero de valors de l'array");
         int x = Convert.ToInt32(Console.ReadLine());
         char[] valors = new char[x];
@@ -422,41 +499,78 @@ values = (4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40,
 
         Console.WriteLine(min + " es el numero mes petit d'aquesta serie");
 
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
 
     }
     /*L'usuari entra 10 enters. Imprimeix-los en l'ordre invers al que els ha entrat.*/
     /**/
     public void InverseOrder()
     {
-        int[] valors = new int[10];//declaro una array que tiene 10 valores
+        Console.Clear();
+        Console.WriteLine("C - InverseOrder");
+        Console.WriteLine();
 
+        int[] valors = new int[10];//declaro una array que tiene 10 valores
+        
         for (int i = 0; i < 10; i++)
         {
-            valors[i] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Donam el valor numero " + (i+1) + ":");
+            valors[i] = Convert.ToInt32(Console.ReadLine());//demano els valors de l'array a l'usuari
         }
 
-        for (int i = 9; i >= 0; i--)
-        {
-            Console.WriteLine(valors[i] + " ");
-        }
+        for (int i = valors.Length; i >= 0; i--) Console.WriteLine(valors[i] + " ");//print//un for que fa que començi pel final de l'array
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
     public void Palindrome()
     {
-        /*   char[] valors;
-               char letra=' ';
 
-               while(letra != )
-               {
+        Console.Clear();
+        Console.WriteLine("D - Palindrome");
+        Console.WriteLine();
 
-               }
+        string paraula = Console.ReadLine();
+        int contador = -1;
+        char[] comprovador;
+        bool palindrom = true;
+       
 
-               for (int i = 0; ; i++) ;*/
+        for(int i = paraula.Length -1; i >= 0; i--) contador++;
+
+        comprovador = new char[contador +1];
+
+        for (int i = 0; i < paraula.Length; i++)
+        {
+            comprovador[contador - i] = paraula[i];
+        }
+
+        for (int i = 0; i < paraula.Length; i++)
+        {
+            if(comprovador[i] != paraula[i]) palindrom = false;
+ 
+        }
+
+        Console.WriteLine();
+        Console.WriteLine(palindrom);
+        Console.WriteLine();
+        
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+            
     }
     /*Printa per pantalla ordenats si la llista de N valors introduïts per l'usuari estan ordenats.
 L'usuari primer entrarà el número d'enters a introduir i després els diferents enters.
 */
     public void ListSortedValues()
     {
+
+        Console.Clear();
+        Console.WriteLine("E - ListSortedValues");
+        Console.WriteLine();
+
         int num = Convert.ToInt32(Console.ReadLine());
         int[] valors = new int[num];
         string ordre = "";
@@ -479,29 +593,36 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
             {
                 ordre = "Desordenats";
 
-               
+
             }
 
-        } 
-      
+        }
+
         Console.WriteLine(ordre);
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
     }
 
     /*Printa per pantalla cap i cua si la llista de N valors introduïts per l'usuari són cap i cua (llegits en ordre invers és la mateixa llista).*/
-    public void CapICuaValues() 
-{
+    public void CapICuaValues()
+    {
+
+        Console.Clear();
+        Console.WriteLine("F - CapICuaValues");
+        Console.WriteLine();
+
         int num = Convert.ToInt32(Console.ReadLine());
-        int[]vector= new int[num];
-        int[]vectorInv= new int[num];
-        bool capicua= true;
+        int[] vector = new int[num];
+        int[] vectorInv = new int[num];
+        bool capicua = true;
 
         for (int i = 0; i < num; i++)
         {
-            int j = vectorInv.Length - i -1;
+            int j = vectorInv.Length - i - 1;
 
             Console.WriteLine("Donam el nombre " + i);
 
-            vector[i]= Convert.ToInt32(Console.ReadLine());
+            vector[i] = Convert.ToInt32(Console.ReadLine());
 
             vectorInv[j] = vector[i];
 
@@ -509,14 +630,14 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
 
         for (int i = 0; i < num; i++)
         {
-            if (vector[i] != vectorInv[i]) 
+            if (vector[i] != vectorInv[i])
             {
                 i = num;
                 capicua = false;
             }
         }
 
-        if(capicua)
+        if (capicua)
         {
             Console.WriteLine("Es capicua");
         }
@@ -525,30 +646,38 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
             Console.WriteLine("No es capicua");
         }
 
-        
-}
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
+
+    }
 
     /*L'usuari introduirà 2 vectors de valors, primer mida després introdueix elements.
     Printa per pantalla són iguals si ha introduït el mateix vector, o no són iguals si són diferents.*/
-public void ListSameValues()
-{
-       Console.WriteLine("Donam el numero d'elements que te el vector 1");
-       int num1 = Convert.ToInt32(Console.ReadLine());
+    public void ListSameValues()
+    {
+
+        Console.Clear();
+        Console.WriteLine("G - ListSameValues");
+        Console.WriteLine();
+
+        Console.WriteLine("Donam el numero d'elements que te el vector 1");
+        int num1 = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Donam el numero d'elements que te el vector 2");
         int num2 = Convert.ToInt32(Console.ReadLine());
 
-       int[]vector1 = new int[num1]; 
-       int[]vector2 = new int[num2];
+        int[] vector1 = new int[num1];
+        int[] vector2 = new int[num2];
 
         bool iguals = true;
-        
-        if(num1 != num2)
+
+        if (num1 != num2)
         {
             Console.WriteLine("No són iguals");
         }
         else
         {
-            for(int i=0; i<vector1.Length; i++)
+            for (int i = 0; i < vector1.Length; i++)
             {
                 Console.WriteLine("Donam el de nombre de la posicio " + i + " del vector1");
                 vector1[i] = Convert.ToInt32(Console.ReadLine());
@@ -560,7 +689,7 @@ public void ListSameValues()
                 vector2[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            for(int i = 0; i < vector1.Length; i++)
+            for (int i = 0; i < vector1.Length; i++)
             {
                 if (vector1[i] != vector2[i]) iguals = false;
             }
@@ -573,14 +702,22 @@ public void ListSameValues()
             {
                 Console.WriteLine("No són iguals");
             }
-        }        
-}
+        }
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+    }
 
     /*L'usuari introdueix una llista de valors.
     Imprimeix per pantalla la suma d'aquests valors.
     */
-public void ListSumValues() 
-{
+    public void ListSumValues()
+    {
+
+        Console.Clear();
+        Console.WriteLine("H - ListSumValues");
+        Console.WriteLine();
+
         Console.WriteLine("Donam el numero de valors que te l'array");
         int num = Convert.ToInt32(Console.ReadLine());
         int[] vector = new int[num];
@@ -592,26 +729,33 @@ public void ListSumValues()
         }
         Console.WriteLine(vector.Sum());
 
-}
+    }
 
     /*En una botiga volem convertir tot de preus sense a IVA al preu amb IVA. Per afegir l'IVA a un preu hem de sumar-hi el 21% del seu valor.
     L'usuari introduirà el preu de 10 articles. Imprimeix per pantalla el preu amb l'IVA afegit amb el següent format indicat a continuació. El programa no pot imprimir res fins a que hagi llegit tots els valors.
     */
-public void IvaPrices() 
-{ 
+    public void IvaPrices()
+    {
+        Console.Clear();
+        Console.WriteLine("I - IvaPrices");
+        Console.WriteLine();
+
         double[] articles = new double[10];
-        
-        for(int i=0; i<articles.Length; i++)
+
+        for (int i = 0; i < articles.Length; i++)
         {
 
-            articles[i]= Convert.ToDouble(Console.ReadLine()); 
+            articles[i] = Convert.ToDouble(Console.ReadLine());
         }
 
         foreach (double item in articles)
         {
-            Console.WriteLine(item +" IVA = " + (item + item * 0.21) + " euros");
+            Console.WriteLine(item + " IVA = " + (item + item * 0.21) + " euros");
         }
-}
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+    }
 
     /*El departament de salut ens ha demanat que calculem la taxa d’infecció que està tenint la Covid en la nostre regió sanitària. Donat un nombre de casos 
     casos1
@@ -623,29 +767,40 @@ public void IvaPrices()
     */
     public void CovidGrowRate()
     {
+        Console.Clear();
+        Console.WriteLine("J - CovidGrowRate");
+        Console.WriteLine();
+
         int num = Convert.ToInt32(Console.ReadLine());
 
-        double[] casos= new double[num];
+        double[] casos = new double[num];
 
-        for(int i=0; i<casos.Length;i++)
+        for (int i = 0; i < casos.Length; i++)
         {
-            casos[i]= Convert.ToDouble(Console.ReadLine());
+            casos[i] = Convert.ToDouble(Console.ReadLine());
         }
-        
-        for(int i=0; i < casos.Length -1;i++)
+
+        for (int i = 0; i < casos.Length - 1; i++)
         {
-            Console.WriteLine("Caso " + (i + 1) + ": " + casos[i +1] / casos[i]);
+            Console.WriteLine("Caso " + (i + 1) + ": " + casos[i + 1] / casos[i]);
         }
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
 
     }
 
     /*Donada una velocitat d'una bicicleta en metres per segon, indica els metres que haurà recorregut quan hagi passat 1,2,3,4,5,6,7,8,9 i 10 segons.*/
-      public void BicicleDistance() 
-      {
-        double velocitat = Convert.ToDouble(Console.ReadLine());
-        double[]distancia = new double[10];
+    public void BicicleDistance()
+    {
+        Console.Clear();
+        Console.WriteLine("K - BicicleDistance");
+        Console.WriteLine();
 
-        for( int i = 1; i < distancia.Length;i++)
+        double velocitat = Convert.ToDouble(Console.ReadLine());
+        double[] distancia = new double[10];
+
+        for (int i = 1; i < distancia.Length; i++)
         {
             distancia[i] = i;
         }
@@ -654,49 +809,56 @@ public void IvaPrices()
         {
             Console.WriteLine(item * velocitat);
         }
-      }
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+    }
     /*L'usuari introdueix una llista de valors. Imprimeix per pantalla el valor que està més proper a la mitjana dels valors de la llista (calcula la mitjana dels valors primer i cerca el més proper després).*/
-    public void ValueNearAvg() 
-    { 
+    public void ValueNearAvg()
+    {
+        Console.Clear();
+        Console.WriteLine("L - ValueNearAvg");
+        Console.WriteLine();
+
         int num = Convert.ToInt32(Console.ReadLine());
 
         int numAprox = 0;
         int mitjana;
-        int machaca;
         int valorAprox;
-       
+
         int[] vector = new int[num];
 
-        for(int i =0; i < vector.Length; i++) 
+        for (int i = 0; i < vector.Length; i++)
         {
-            vector[i] = Convert.ToInt32(Console.ReadLine());
+            vector[i] = Convert.ToInt32(Console.ReadLine());//li dono un valor a cada espai de memoria de l'array
         }
         ;
-        valorAprox = vector.Sum();
-        mitjana = vector.Sum() / num;
+        valorAprox = vector.Sum();//sumo tots els valors de l'array per tener un valor a comparar
+        mitjana = vector.Sum() / num;//faig la mitjan
 
-        for(int i =0; i < vector.Length; i++) 
-        { 
-            if(mitjana < vector[i])
+        for (int i = 0; i < vector.Length; i++)
+        {
+            if (mitjana < vector[i])//si la mitjana es mes petita que el vector
             {
-                machaca = vector[i] - mitjana;
-                if(valorAprox >machaca)
+                if (valorAprox > vector[i] - mitjana)//si el valoraprox es mes gran que la resta de la mitja pel vector
                 {
-                    valorAprox = machaca;
-                    numAprox = vector[i];
+                    valorAprox = vector[i] - mitjana;//el valor mes petit es converteix en el nou valor
+                    numAprox = vector[i];//em guardo el numero original per printarlo
                 }
             }
-            else if(mitjana > vector[i])
+            else if (mitjana > vector[i])//si la mitjana es mes gran que el vector
             {
-                machaca = mitjana - vector[i];
-                if (valorAprox > machaca)
+                if (valorAprox > mitjana - vector[i])
                 {
-                    valorAprox = machaca;
-                    numAprox = vector[i];
+                    valorAprox = mitjana - vector[i];//el valor mes petit es converteix en el mes petit
+                    numAprox = vector[i];//em guardo el numero original per printarlo
                 }
             }
         }
         Console.WriteLine(numAprox);
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
 
     }
 
@@ -708,8 +870,96 @@ public void IvaPrices()
     El residu és igual al caràcter de control per tant és un ISBN vàlid
     */
 
-    public void Isbn() { }
-   /*public void Isbn13() { }
+    public void Isbn()
+    {
+        Console.Clear();
+        Console.WriteLine("M - ISBN");
+        Console.WriteLine();
+
+        Console.Clear();
+        Console.WriteLine("ISBN");
+        
+
+
+        int[] ISBN = new int[10];
+        int acumulador = 0;
+        bool output = false;
+
+        for (int i = 0; i < ISBN.Length; i++)
+        {
+            Console.WriteLine("Donam un numero");
+            ISBN[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for (int i = 0; i < ISBN.Length - 1; i++)
+        {
+            ISBN[i] = ISBN[i] * (i + 1);//multiplico cada valor de ISBN per i mes 1
+            acumulador += ISBN[i];//sumo tots el valors de ISBN menys el ultim
+        }
+
+        acumulador = acumulador % 11;//faig el modul de 11
+
+        if (acumulador == 10)//si el modul 11 em dona 10
+        {
+            output = true;//OUput false
+            for (int i = 0; i < ISBN.Length-1; i++)
+            {
+                Console.Write(ISBN[i]);
+            }                                       //Printo tots els nombres de ISBN menys l'ultim i despres printo la X
+            Console.Write("X");
+        }
+
+        else if(acumulador == ISBN[ISBN.Length - 1])//si el modul de 11 es igual al ultim nombre de ISBN 
+        {
+            output = true;  
+        }
+
+        Console.WriteLine(output);
+
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
+    }
+
+    /*A partir de l'any 2006 els ISBN van passar a tenir 13 dígits i es va adaptar per a què fos compatible amb el sistema de codi de barres EAN-13.
+Volem verificar si un codi ISBN és correcte. Mitjançant el dígit de control que és el dígit número 13. Es calcula de la manera següent:
+Es multiplica el primer dígit dels 12 digits
+per 1, el segon per 3, el tercer per 1, el quart per 3, i així
+successivament fins al número 12;
+El dígit de control és el valor que s'ha d'afegir a la suma de tots aquests productes per fer-la divisible per 10. Si
+el resultat de la suma ja fos múltiple de 10, el dígit de control seria 0.
+Aquest ISBN 978-84-92493-70-8 ens el donarien de la manera següent, indica si el dígit de control és correcte.
 */
+    public void Isbn13()
+    {
+        Console.Clear();
+        Console.WriteLine("N - ISBN13");
+        Console.WriteLine();
+
+        int[]ISBN= new int[13];
+        int valors;
+        bool output;
+        
+        for(int i =0; i < ISBN.Length; i++) 
+        {
+            ISBN[i]= Convert.ToInt32(Console.ReadLine());
+        }
+
+        for(int i =1; i < ISBN.Length; i+=2) 
+        {
+            ISBN[i]*=3;
+        }
+
+        valors = ISBN.Sum();
+        
+        if (valors % 10 == 0) output= true; else output = false;
+        
+        Console.WriteLine(output);
+
+        Console.WriteLine("Prem enter per tornar al menu");
+        Console.ReadLine();
+
+    }
+ 
 
 }
