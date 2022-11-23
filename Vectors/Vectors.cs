@@ -42,7 +42,7 @@
             Console.WriteLine("N - Isbn13");
 
             Console.WriteLine();
-            Console.WriteLine("Escogeix una opció: ");
+            Console.WriteLine("Escolleix una opció: ");
             x = Convert.ToChar(Console.ReadLine());
 
             switch (x)
@@ -201,12 +201,15 @@
         Console.WriteLine();
 
 
-        Console.Write("Qyab ");
+        Console.Write("Quin es el numero de candidats? ");
         int x = Convert.ToInt32(Console.ReadLine());//declaro x i el demano a l'usuari
         string[] candidats = new string[x];//declaro un array de strings i poso que el nombre de valors que conté es x
 
-        for (int i = 0; i < x; i++)/*declaro e inicialitzo i a 0; mentres i sigui mes petita que x; suma 1 a i */candidats[i] = Convert.ToString(Console.ReadLine());//li dono a candidats el valor de la i, la igualo al que em dongui l'usuari
-
+        for (int i = 0; i < x; i++)/*declaro e inicialitzo i a 0; mentres i sigui mes petita que x; suma 1 a i */
+        {
+            Console.WriteLine("Digam el non del candidat numero: " +(1+ i));
+            candidats[i] = Convert.ToString(Console.ReadLine());//li dono a candidats el valor de la i, la igualo al que em dongui l'usuari
+        }
         Console.WriteLine();
         Console.WriteLine();
 
@@ -215,9 +218,13 @@
             Console.WriteLine("Donam un numero i et diré el nom de la llista corresponent");//printo
             Console.WriteLine();
             x = Convert.ToInt32(Console.ReadLine());//igualo x al numero de la llista que em dongui l'usuari
-            x--;//decremento 1 a x
-            Console.WriteLine(candidats[x]);//printo el candidat donat per x a la pantalla
-        } while (x != -1);//tot aixo mentres x no sigui -1
+            if(x < 6 && x >-1)
+            {
+                x--;//decremento 1 a x
+                Console.WriteLine(candidats[x]);//printo el candidat donat per x a la pantalla
+            }
+            
+        } while (x != -1);//tot aixo mentres x no sigui -2
 
         Console.WriteLine("Prem enter per tornar al menu");
         Console.ReadLine();
@@ -532,24 +539,25 @@ values = (4, 8, 9, 40, 54, 84, 40, 6, 84, 1, 1, 68, 84, 68, 4, 840, 684, 25, 40,
         Console.WriteLine("D - Palindrome");
         Console.WriteLine();
 
+        Console.WriteLine("Donam una paraula o un numero i et diré si es palindrom");
         string paraula = Console.ReadLine();
-        int contador = -1;
+        int contador = -1;//el contador comença en -1
         char[] comprovador;
         bool palindrom = true;
        
 
-        for(int i = paraula.Length -1; i >= 0; i--) contador++;
+        for(int i = paraula.Length -1; i >= 0; i--) contador++; //contro tots els espais que te l'string
 
-        comprovador = new char[contador +1];
+        comprovador = new char[contador +1];//dic quants espais tindra la meva array
 
         for (int i = 0; i < paraula.Length; i++)
         {
-            comprovador[contador - i] = paraula[i];
+            comprovador[contador - i] = paraula[i];//igualo inversament les dos arrays
         }
 
         for (int i = 0; i < paraula.Length; i++)
         {
-            if(comprovador[i] != paraula[i]) palindrom = false;
+            if(comprovador[i] != paraula[i]) palindrom = false;//comparo les dos arrays amb el mateix espai de memoria per veure si els valors coincideixen
  
         }
 
@@ -571,30 +579,26 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("E - ListSortedValues");
         Console.WriteLine();
 
+        Console.WriteLine("Digam quants enters introduiras");
         int num = Convert.ToInt32(Console.ReadLine());
         int[] valors = new int[num];
         string ordre = "";
 
         for (int i = 0; i < valors.Length; i++)
         {
-            valors[i] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Donam el valor numero " + (i + 1));
+            valors[i] = Convert.ToInt32(Console.ReadLine());//demano els valors
         }
 
-        for (int i = 0; valors.Length != i + 1; i++)
+        for (int i = 0; valors.Length != i + 1; i++)//me i no sigui igual a la llargada de l'array
         {
             Console.WriteLine();
             Console.WriteLine();
 
-            if (valors[i] < valors[i + 1])
-            {
-                ordre = "Ordenats";
-            }
-            else
-            {
-                ordre = "Desordenats";
+            if (valors[i] < valors[i + 1]) ordre = "Ordenats";
+                                                                //miro si el valors estan ordenats comparantlo amb el seguent.
+            else ordre = "Desordenats";
 
-
-            }
 
         }
 
@@ -611,6 +615,8 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("F - CapICuaValues");
         Console.WriteLine();
 
+
+        Console.WriteLine("Donam el numero de valors que m'introduiras");
         int num = Convert.ToInt32(Console.ReadLine());
         int[] vector = new int[num];
         int[] vectorInv = new int[num];
@@ -618,33 +624,27 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
 
         for (int i = 0; i < num; i++)
         {
-            int j = vectorInv.Length - i - 1;
+            int j = vectorInv.Length - i - 1; //igualo j a la llargada del vector -1 - i que es el numero de memoria actual
 
             Console.WriteLine("Donam el nombre " + i);
 
-            vector[i] = Convert.ToInt32(Console.ReadLine());
+            vector[i] = Convert.ToInt32(Console.ReadLine());//demano els valors de vector
 
-            vectorInv[j] = vector[i];
+            vectorInv[j] = vector[i];//igualo inversament les arrays
 
         }
 
         for (int i = 0; i < num; i++)
         {
-            if (vector[i] != vectorInv[i])
+            if (vector[i] != vectorInv[i])//comprobo si vector i vectorInv tenen els mateixos valors a les mateixes posicions de memoria
             {
-                i = num;
+                i = num;        //sino surto del for i dic que no es cap
                 capicua = false;
             }
         }
 
-        if (capicua)
-        {
-            Console.WriteLine("Es capicua");
-        }
-        else
-        {
-            Console.WriteLine("No es capicua");
-        }
+        if (capicua) Console.WriteLine("Es capicua");
+        else Console.WriteLine("No es capicua");    //printo el resultat
 
         Console.WriteLine("Prem enter per tornar al menu");
         Console.ReadLine();
@@ -671,11 +671,11 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
 
         bool iguals = true;
 
-        if (num1 != num2)
+        if (num1 != num2)//comparo si els vectors son iguals
         {
             Console.WriteLine("No són iguals");
         }
-        else
+        else//sino
         {
             for (int i = 0; i < vector1.Length; i++)
             {
@@ -683,21 +683,21 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
                 vector1[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            for (int i = 0; i < vector2.Length; i++)
-            {
+            for (int i = 0; i < vector2.Length; i++)                //demano als dos les posicions de memoria per SEPARAT PERQUE ES MES INTUITIU COMENÇAR PER L'USUARI COMENÇAR PER UN I ACABAR EN L'ALTRE :9
+            {                                                       //YA SE QUE HO PUC FICAR ELS DOS A UN FOR, QUE ET CONEC MONTSE :)
                 Console.WriteLine("Donam el de nombre de la posicio " + i + " del vector2");
                 vector2[i] = Convert.ToInt32(Console.ReadLine());
             }
 
             for (int i = 0; i < vector1.Length; i++)
             {
-                if (vector1[i] != vector2[i]) iguals = false;
+                if (vector1[i] != vector2[i]) iguals = false;//comparo si son iguals o no els valors introduits anteriorment
             }
 
             if (iguals == true)
             {
                 Console.WriteLine("Son iguals");
-            }
+            }//pues eso la resposta a traves de un bool que original que soc
             else
             {
                 Console.WriteLine("No són iguals");
@@ -719,15 +719,15 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine();
 
         Console.WriteLine("Donam el numero de valors que te l'array");
-        int num = Convert.ToInt32(Console.ReadLine());
+        int num = Convert.ToInt32(Console.ReadLine());//demano el num de valors de l'array
         int[] vector = new int[num];
 
 
         for (int i = 0; i < vector.Length; i++)
         {
-            vector[i] = Convert.ToInt32(Console.ReadLine());
+            vector[i] = Convert.ToInt32(Console.ReadLine());//demano els numeros a l'usuari
         }
-        Console.WriteLine(vector.Sum());
+        Console.WriteLine(vector.Sum());//sumo tots els valors amb aquesta fantastica funcio :))))
 
     }
 
@@ -740,17 +740,17 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("I - IvaPrices");
         Console.WriteLine();
 
-        double[] articles = new double[10];
+        double[] articles = new double[10];//hi ha 10 articles aixi que 10 valors que conte l'array :)
 
         for (int i = 0; i < articles.Length; i++)
         {
-
-            articles[i] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Preu del article numero: " + (i+1));
+            articles[i] = Convert.ToDouble(Console.ReadLine());//demano quan valeeen
         }
 
-        foreach (double item in articles)
+        foreach (double item in articles)//un clasic foreach normal i corrent
         {
-            Console.WriteLine(item + " IVA = " + (item + item * 0.21) + " euros");
+            Console.WriteLine(item + " IVA = " + (item + item * 0.21) + " euros");//printo per pantalla el preu del article amb el IVA inclos
         }
 
         Console.WriteLine("Prem enter per tornar al menu");
@@ -771,18 +771,19 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("J - CovidGrowRate");
         Console.WriteLine();
 
-        int num = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Quants casos has detectat?");
+        int num = Convert.ToInt32(Console.ReadLine());//demano les semanes
 
-        double[] casos = new double[num];
+        double[] casos = new double[num];//dic quan casos te l'array
 
         for (int i = 0; i < casos.Length; i++)
         {
-            casos[i] = Convert.ToDouble(Console.ReadLine());
+            casos[i] = Convert.ToDouble(Console.ReadLine());//aqui el nombre de casos detectats
         }
 
         for (int i = 0; i < casos.Length - 1; i++)
         {
-            Console.WriteLine("Caso " + (i + 1) + ": " + casos[i + 1] / casos[i]);
+            Console.WriteLine("Caso " + (i + 1) + ": " + casos[i + 1] / casos[i]);//printo el calcul necesari per saber la taxa
         }
 
         Console.WriteLine("Prem enter per tornar al menu");
@@ -797,17 +798,18 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("K - BicicleDistance");
         Console.WriteLine();
 
+        Console.WriteLine("A quina velocitat va la bicicleta en m/s?");
         double velocitat = Convert.ToDouble(Console.ReadLine());
         double[] distancia = new double[10];
 
         for (int i = 1; i < distancia.Length; i++)
         {
-            distancia[i] = i;
+            distancia[i] = i;//igualo el valor de la posicio de memoria a la mateixa posicio de memoria
         }
 
         foreach (double item in distancia)
         {
-            Console.WriteLine(item * velocitat);
+            Console.WriteLine(item * velocitat + "m/s");//multiplico el cada valor per la velocitat
         }
 
         Console.WriteLine("Prem enter per tornar al menu");
@@ -820,6 +822,7 @@ L'usuari primer entrarà el número d'enters a introduir i després els diferent
         Console.WriteLine("L - ValueNearAvg");
         Console.WriteLine();
 
+        Console.WriteLine("Digam quants valors escriuras: ");
         int num = Convert.ToInt32(Console.ReadLine());
 
         int numAprox = 0;
@@ -942,17 +945,17 @@ Aquest ISBN 978-84-92493-70-8 ens el donarien de la manera següent, indica si e
         
         for(int i =0; i < ISBN.Length; i++) 
         {
-            ISBN[i]= Convert.ToInt32(Console.ReadLine());
+            ISBN[i]= Convert.ToInt32(Console.ReadLine());//demano tots els valors de l'array
         }
 
         for(int i =1; i < ISBN.Length; i+=2) 
         {
-            ISBN[i]*=3;
+            ISBN[i]*=3;//multiplico els impars per 3
         }
 
-        valors = ISBN.Sum();
+        valors = ISBN.Sum();//sumo tots els nombres
         
-        if (valors % 10 == 0) output= true; else output = false;
+        if (valors % 10 == 0) output= true; else output = false;//si el modul de 10 es 0 es true sino false
         
         Console.WriteLine(output);
 
