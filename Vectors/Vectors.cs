@@ -1,10 +1,17 @@
-﻿public class Vectors
+﻿//AUTHOR: CARLOS GOMEZ
+//DATE: 23/11/2000
+//DESCRIPTION: Exercicis vectors Uf1
+
+
+public class Vectors
 {
     public static void Main()
     {
         var menu = new Vectors();
         menu.Menu();
     }
+
+    /*DESCRIPTION: Aquest es el menu que utilitzarem per navegar*/
     public void Menu()
     {
 
